@@ -1,0 +1,24 @@
+{% extends 'login.html' %}
+
+{% block body %}
+<div class="form-container">
+    <form action="{{ url_for('main.create_register') }}" method="POST">
+        <label class="tittle">Register</label>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <label>Username</label>
+        <input type="text" name="usuario-register">
+        <label>Gmail</label>
+        <input type="text" name="gmail-register">
+        <label>Password</label>
+        <input type="password" name="password-register">
+        <div class="button-container">
+            <button type="submit">Register</button>
+        </div>
+        <div class="links-container">
+            <a href="{{ url_for('main.login') }}">Login</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

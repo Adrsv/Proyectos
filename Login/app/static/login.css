@@ -1,0 +1,94 @@
+body {
+    background: -webkit-linear-gradient(90deg, #142126,#2e4052,#14161f);background: linear-gradient(90deg, #142126,#2e4052,#14161f);
+    font-size: 28px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh; 
+    padding-top: 60px;
+    }
+    
+    .form-container form {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.500);
+    }
+  
+    .form-container .tittle {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        color: white;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: lighter;
+        font-size: 32px;
+    }
+
+    .form-container label {
+        margin-bottom: 5px; /* Espacio entre cada label */
+        font-size: 20px;
+        font-weight: lighter;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: white;
+    }
+  
+    .form-container input {
+        margin-bottom: 30px; /* Espacio entre cada input */
+        padding: 5px; /* Espacio interno en los inputs */
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-radius: 0px;
+        border: 0px;
+    }
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .links-container a {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: white;
+        margin-bottom: 30px;
+        padding-top: 10px;
+        font-size: 20px;
+        
+    }
+
+.button-container{
+    display: flex;
+    flex-direction: column;
+}
+    .button-container button {
+    margin-bottom: 30px;
+    height: 34px;
+    border-radius: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px; color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    }
+
+@media (min-width: 1200px) {
+    .form-container form {
+        width: 18%;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .form-container form {
+        margin-bottom: 30%;
+    }
+}
+
+.error{
+    font-size: 14px;
+    color: white;
+    border: 1px solid red; border-radius: 5px;
+    background-color: red;
+    padding: 2%;
+}
