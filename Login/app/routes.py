@@ -5,19 +5,16 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def index():
-    # Muestra directamente la página de login en lugar de redirigir
     return render_template('login.html')
 
 @main.route('/inicio')
 def inicio():
-    # Si el usuario no está autenticado, redirige a la página de login
     if 'logged' not in session:
         return redirect(url_for('main.login'))
     return render_template('inicio.html')
 
 @main.route('/register')
 def register():
-    # Muestra directamente la página de registro en lugar de redirigir
     return render_template('register.html')
 
 @main.route('/login', methods=['GET', 'POST'])
@@ -34,10 +31,8 @@ def login():
             session['logged'] = True
             return redirect(url_for('main.inicio'))
         else:
-            # Mostrar la página de login con un mensaje de error
             return render_template('login.html', error='Usuario o Contraseña Incorrecto')
 
-    # Muestra directamente la página de login en lugar de redirigir
     return render_template('login.html')
 
 @main.route('/create-register', methods=['GET', 'POST'])
@@ -48,7 +43,6 @@ def create_register():
         __password = request.form['password-register'].strip()
 
         if len(__password) < 8:
-            # Mostrar la página de registro con un mensaje de error
             return render_template('register.html', error='La contraseña debe tener al menos 8 caracteres')
 
         cur = mysql.connection.cursor()
@@ -62,8 +56,6 @@ def create_register():
             return redirect(url_for('main.login'))
         else:
             cur.close()
-            # Mostrar la página de registro con un mensaje de error
             return render_template('register.html', error='El usuario ya existe')
 
-    # Muestra directamente la página de registro en lugar de redirigir
     return render_template('register.html')
