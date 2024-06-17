@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div>
+    <table>
+        <tr>
+            <th><a href="/order/nombre?direction={{ next_direction }}" class="title-container">Nombre</a></th>
+            <th><a href="/order/apellido?direction={{ next_direction }}" class="title-container">Apellido</a></th>
+            <th><a href="/order/telefono?direction={{ next_direction }}" class="title-container">Teléfono</a></th>
+            <th>
+                <div class="title-container">
+                    <a href="/order/correo?direction={{ next_direction }}" style="text-decoration: none; color: black;">Correo Electrónico</a>
+                </div>
+            </th>
+            <th>
+                <div class="title-container" >
+                    <a href="/order/fecha?direction={{ next_direction }}" style="text-decoration: none; color: black;">Fecha de Nacimiento</a>
+                </div>
+            </th>
+            <th><a href="/order/genero?direction={{ next_direction }}" class="title-container">Género</a></th>
+            <th>Eliminar</th>
+            <th>Actualizar</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td> {{ usuario[1] }} </td>
+            <td> {{ usuario[2] }} </td>
+            <td> {{ usuario[3] }} </td>
+            <td> {{ usuario[4] }} </td>
+            <td> {{ usuario[5] }} </td>
+            <td> {{ usuario[6] }} </td>
+            <td>
+                <a class="delete-button" href="/delete/{{usuario.0}}">X</a>
+            </td>
+            <td>
+                <a class="update-button" href="/edit_user/{{usuario.0}}">Actualizar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="form-container">
+    <form action="{{ url_for('main.add_user') }}" method="POST">        
+        <label>Nombre</label>
+        <input type="text" name="nombre" required>
+        <label>Apellido</label>
+        <input type="text" name="apellido" required>
+        <label>Telefono</label>
+        <input type="number" name="telefono" required>
+        <label>Correo Electronico</label>
+        <input type="email" name="correo" required>
+        <label>Fecha de Nacimiento</label>
+        <input type="date" name="fecha" required>
+        <label>Genero</label>
+        <select name="genero">
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+        </select>
+        <button type="submit">Aceptar</button>
+    </form>
+</div>
+{% endblock %}

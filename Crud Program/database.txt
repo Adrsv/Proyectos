@@ -1,0 +1,11 @@
+CREATE DATABASE crud; 
+USE crud; 
+CREATE TABLE usuarios( 
+    id INT(11) AUTO_INCREMENT PRIMARY KEY, 
+    nombre VARCHAR(15) NOT NULL, 
+    apellido VARCHAR(15) NOT NULL, 
+    telefono VARCHAR(16), 
+    correo VARCHAR(50) NOT NULL, 
+    fecha DATE NOT NULL, 
+    genero VARCHAR(15) NOT NULL 
+);

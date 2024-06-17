@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/update.css">
+    <title>Actualizar Usuario</title>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/update_user/{{usuarios.0}}" method="POST">
+                <label>Nombre</label>
+                <input type="text" name="nombre" value="{{ usuarios.1 }}" required>
+                <label>Apellido</label>
+                <input type="text" name="apellido" value="{{ usuarios.2 }}" required>
+                <label>Telefono</label>
+                <input type="text" name="telefono" value="{{ usuarios.3 }}" required>
+                <label>Correo Electrónico</label>
+                <input type="text" name="correo" value="{{ usuarios.4 }}" required>
+                <label>Fecha de Nacimiento</label>
+                <input type="text" name="fecha" value="{{ usuarios.5 }}" required>
+                <label>Genero</label>
+                <select name="genero">
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                </select>
+            <button type="submit">Aceptar</button>
+        </form>
+    </div>
+</body>
+</html>
