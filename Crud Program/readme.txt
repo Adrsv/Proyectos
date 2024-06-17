@@ -1,6 +1,7 @@
 1. Instale los requerimientos necesarios en un entorno virtual si lo desea.
     pip install virtualenv
     virtualenv (nombre)
+    active el entorno virtual
 
 2. Instale los requerimientos necesarios.
     pip install -r requirements.txt
