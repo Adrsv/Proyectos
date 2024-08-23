@@ -35,8 +35,8 @@ def add_user():
     if request.method == 'POST':
         nombre = request.form['nombre'].strip().lower()
         apellido = request.form['apellido'].strip().lower()
-        telefono = request.form['telefono']
-        correo = request.form['correo']
+        telefono = request.form['telefono'].strip()
+        correo = request.form['correo'].strip()
         fecha = request.form['fecha']
         genero = request.form['genero']
         
@@ -74,8 +74,8 @@ def edit_user(id):
 def update_user(id):
     nombre= request.form['nombre'].strip().lower()
     apellido= request.form['apellido'].strip().lower()
-    telefono= request.form['telefono']
-    correo= request.form['correo']
+    telefono= request.form['telefono'].strip()
+    correo= request.form['correo'].strip()
     fecha= request.form['fecha']
     genero= request.form['genero']
     
