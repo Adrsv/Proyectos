@@ -8,6 +8,9 @@ def verify_data(nombre, apellido, correo, telefono):
     if not nombre.strip() or not apellido.strip():
         flash('Nombre y apellido necesarios', 'error')
         return False
+    elif not re.match(r"^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$", nombre) or not (re.match(r"^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$", apellido)):
+        flash('Nombre y apellido no son válidos', 'error')
+        return False
     elif not re.match(r"[^@]+@[^@]+\.[^@]+", correo):
         flash('Correo electrónico no es válido', 'error')
         return False
